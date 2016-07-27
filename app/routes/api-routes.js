@@ -21,16 +21,16 @@ module.exports = function(app){
 			// (Note how we're using the ORM here to run our searches)
 			orm.searchCharacter(req.params.characters,function(data){
 				res.json(data);
-			})
+			});
 		}
 
 		// Otherwise...
 		else{
-			// Otherwise display the data for all of the characters. 
+			// Otherwise display the data for all of the characters.
 			// (Note how we're using the ORM here to run our searches)
 			var data =  orm.allCharacters(function(data){
 				res.json(data); });
-			};
+			}
 
 	});
 
@@ -44,5 +44,5 @@ module.exports = function(app){
 		orm.addCharacter(character, function(data){
 		});
 
-	})
-}
+	});
+};
